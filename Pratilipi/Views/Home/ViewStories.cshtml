@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Pratilipi.Models.Story>
+
+@{
+    ViewBag.Title = "ViewStories";
+}
+
+<h2>View Stories</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.storytitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.des)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Views)
+        </th>
+        <th>View Full Story</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.storytitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.des)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Views)
+        </td>
+        <td>
+          
+            @Html.ActionLink("View Story", "View", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
